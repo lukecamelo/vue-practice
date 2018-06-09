@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 <template>
 
   <div class='test'>
@@ -24,7 +26,8 @@
     <label>last name</label>
     <input type="text" v-model='user.lastName'>
     <br>
-    <h3>{{ fullName }}</h3>
+    <h3>{{ fullName }}</h3><br>
+    <h2>{{ msg }}</h2>
   </div>
 
 </template>
@@ -32,6 +35,12 @@
 <script>
 export default {
   name: 'test',
+  props: {
+    msg: {
+      type: String,
+      default: 'Foobar'
+    }
+  },
   data() {
     return {
       title: 'Hello world!',
