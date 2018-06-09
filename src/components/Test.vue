@@ -15,7 +15,16 @@
       </li>
     </ul>
 
-    <button v-on:click="greet">Say greeting</button>
+    <button v-on:click="nameChange">Luke -> Billy -> Luke</button>
+    <input type="text" v-on:keyup='pressKey' v-on:keyup.enter='weewoo'>
+    <hr>
+    <label>first name</label>
+    <input type="text" v-model='user.firstName'>
+    <br>
+    <label>last name</label>
+    <input type="text" v-model='user.lastName'>
+    <br>
+    <h3>{{ fullName }}</h3>
   </div>
 
 </template>
@@ -39,12 +48,23 @@ export default {
     }
   },
   methods: {
-    greet: function() {
+    nameChange: function() {
       if(this.user.firstName === 'Luke') {
         this.user.firstName = 'Billy'
       } else {
         this.user.firstName = 'Luke'
       }
+    },
+    pressKey: function(e) {
+      console.log(e.target.value)
+    },
+    weewoo: function() {
+      alert('wee woo')
+    }
+  },
+  computed: {
+    fullName: function() {
+      return this.user.firstName + ' ' + this.user.lastName
     }
   }
 }
