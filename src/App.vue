@@ -2,19 +2,19 @@
 
 <template>
   <div id="app">
-    <Weather></Weather>
+    <RandomUser></RandomUser>
   </div>
 </template>
 
 <script>
 import Test from './components/Test'
 import Users from './components/Users'
-import Weather from './components/Weather'
+import RandomUser from './components/RandomUser'
 
 export default {
   name: 'App',
   components: {
-    Test, Users, Weather
+    Test, Users, RandomUser
   },
 };
 </script>
