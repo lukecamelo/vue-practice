@@ -1,17 +1,20 @@
+/* eslint-disable */
+
 <template>
   <div id="app">
-    <Users></Users>
+    <Weather></Weather>
   </div>
 </template>
 
 <script>
 import Test from './components/Test'
 import Users from './components/Users'
+import Weather from './components/Weather'
 
 export default {
   name: 'App',
   components: {
-    Test, Users
+    Test, Users, Weather
   },
 };
 </script>
@@ -22,7 +25,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2c6aa8;
   margin-top: 60px;
 }
 </style>

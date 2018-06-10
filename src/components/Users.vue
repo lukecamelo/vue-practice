@@ -12,7 +12,10 @@
 
     <ul>
       <li v-for='user in users' :key='user.id'>
-        {{ user.name }}: {{ user.email }}
+        <input type="checkbox" class='toggle' v-model='user.contacted'>
+        <span :class='{contacted: user.contacted}'>
+          {{ user.name }}: {{ user.email }} <button v-on:click='deleteUser(user)'>X</button>
+        </span>
       </li>
     </ul>
 
@@ -39,7 +42,10 @@ export default {
   methods: {
     addUser: function(e) {
       e.preventDefault()
-      this.users.push({ name: this.newUser.name, email: this.newUser.email })
+      this.users.push({ name: this.newUser.name, email: this.newUser.email, contacted: false })
+    },
+    deleteUser: function(user) {
+      this.users.splice(this.users.indexOf(user), 1)
     }
   }  
 }
@@ -51,5 +57,8 @@ ul {
   list-style-type: none;
 }
 
+.contacted {
+  text-decoration: line-through;
+}
 </style>
 
