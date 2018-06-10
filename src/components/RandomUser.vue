@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <h1>Name: {{ firstName }} {{ lastName }} {{ testProp }}</h1>
+    <h1>Name: {{ fullName }}</h1>
     <h2>Address: {{ street }}, {{ city }} {{ state }} </h2>
   </div>
 </template>
@@ -44,6 +44,11 @@ export default {
           this.city = data.location.city
         })
         .catch(e => console.log(e))
+    }
+  },
+  computed: {
+    fullName: function() {
+      return this.firstName + ' ' + this.lastName
     }
   }
 }
