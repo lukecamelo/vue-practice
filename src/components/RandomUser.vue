@@ -57,5 +57,6 @@ export default {
 <style scoped>
   * {
     color: black;
+    text-align: center;
   }
 </style>
