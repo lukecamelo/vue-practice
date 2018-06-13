@@ -4,6 +4,7 @@
   <div>
     <h1>Name: {{ fullName }}</h1>
     <h2>Address: {{ street }}, {{ city }} {{ state }} </h2>
+    <h3>This dumbass has their password available for everyone to see here look: {{ password }}</h3>
   </div>
 </template>
 
@@ -19,7 +20,8 @@ export default {
       lastName: '',
       street: '',
       city: '',
-      state: ''
+      state: '',
+      password: ''
     }
   },
   props: {
@@ -42,6 +44,7 @@ export default {
           this.street = data.location.street
           this.state = data.location.state
           this.city = data.location.city
+          this.password = data.login.password
         })
         .catch(e => console.log(e))
     }
@@ -55,8 +58,10 @@ export default {
 </script>
 
 <style scoped>
+
   * {
     color: black;
     text-align: center;
   }
+
 </style>
